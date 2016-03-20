@@ -5,6 +5,9 @@
  */
 
 @import '../variables.scss';
+@import '../bootswatch.scss';
+
+$footer-height: 60px;
 
 html, body {
   margin: 0;
@@ -14,24 +17,22 @@ html, body {
   font-family: $font-family-base;
 }
 
-.Layout {
-  margin: 0 auto;
+html {
+  position: relative;
+  min-height: 100%;
+  padding-top: 50px;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: $footer-height;
 }
 
-@media (min-width: $screen-sm-min) {
-  .Layout {
-    width: calc($screen-sm-min - 18px);
-  }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: $footer-height;
+  background-color: $panel-footer-bg;
 }
 
-@media (min-width: $screen-md-min) {
-  .Layout {
-    width: calc($screen-md-min - 22px);
-  }
-}
-
-@media (min-width: $screen-lg-min) {
-  .Layout {
-    width: calc($screen-lg-min - 30px);
-  }
-}
